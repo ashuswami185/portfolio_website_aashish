@@ -7,7 +7,7 @@ function Home() {
       {/* Main Content */}
       <div className="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 z-[2] pointer-events-none max-w-[calc(100vw-3rem)] md:max-w-none">
         <div className="pointer-events-auto">
-          <div className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] xl:text-[140px] 2xl:text-[200px] font-bold leading-[0.85] tracking-[-2px] md:tracking-[-3px] mb-[20px] md:mb-[35px]">
+          <div className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[length:min(calc(12vw_-_16px),200px)] font-bold leading-[0.85] tracking-[-2px] md:tracking-[-3px] mb-[20px] md:mb-[35px]">
             <span className="inline-block bg-gradient-to-r from-[#c0c0c0] via-[#c0c0c0] to-[#1a1a1a] bg-clip-text text-transparent">
               AASHISH SWAMI
             </span>
