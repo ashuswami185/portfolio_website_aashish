@@ -23,12 +23,12 @@ function Layout({ children }) {
           WORK
         </Link>
         <Link
-          to="/gallery"
+          to="/about"
           className={`no-underline text-[13px] font-medium tracking-[2px] transition-colors duration-300 uppercase hover:text-[#333] ${
-            location.pathname === '/gallery' ? 'text-[#333]' : 'text-[#777]'
+            location.pathname === '/about' ? 'text-[#333]' : 'text-[#777]'
           }`}
         >
-          GALLERY
+          ABOUT
         </Link>
         <Link
           to="/contact"
@@ -64,13 +64,13 @@ function Layout({ children }) {
             WORK
           </Link>
           <Link
-            to="/gallery"
+            to="/about"
             onClick={() => setMobileMenuOpen(false)}
             className={`no-underline text-[20px] font-medium tracking-[2px] transition-colors duration-300 uppercase hover:text-[#333] ${
-              location.pathname === '/gallery' ? 'text-[#333]' : 'text-[#777]'
+              location.pathname === '/about' ? 'text-[#333]' : 'text-[#777]'
             }`}
           >
-            GALLERY
+            ABOUT
           </Link>
           <Link
             to="/contact"

@@ -1,40 +1,58 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function Work() {
-  const [hoveredProject, setHoveredProject] = useState(null)
-
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      tech: 'React • Node.js • MongoDB',
-      description: 'Full-stack e-commerce solution with modern UI and seamless checkout experience.',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80',
-      year: '2024'
+      title: 'Parking Management System',
+      tech: 'React • Tailwind • Node.js • Express • MongoDB',
+      description: 'Full stack parking management app with JWT auth, OTP email verification, analytics charts, CSV import and export, and downloadable PDF reports.',
+      year: '2026',
+      links: [
+        { label: 'Frontend', url: 'https://github.com/ashuswami185/Parking-system-frontend' },
+        { label: 'Backend', url: 'https://github.com/ashuswami185/Parking-system-backend' }
+      ]
     },
     {
       id: 2,
-      title: 'Portfolio Website',
-      tech: 'React • Vite • Tailwind CSS',
-      description: 'Minimalist portfolio showcasing creative work with smooth animations.',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&q=80',
-      year: '2024'
+      title: 'Clean Notes on Kubernetes',
+      tech: 'React • Express • PostgreSQL • Docker • Kubernetes',
+      description: 'Minimal notes app with auto save, pinning, archiving and instant search, built as containerized microservices behind an NGINX Ingress.',
+      year: '2026',
+      links: [
+        { label: 'Live', url: 'https://k8s-notes-app.vercel.app' },
+        { label: 'Code', url: 'https://github.com/ashuswami185/k8s-notes-app' }
+      ]
     },
     {
       id: 3,
-      title: 'Dashboard Application',
-      tech: 'Next.js • TypeScript • Prisma',
-      description: 'Intuitive analytics dashboard with real-time data visualization.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80',
-      year: '2024'
+      title: 'PestnFix',
+      tech: 'TypeScript • Node.js • MongoDB • JWT',
+      description: 'Pest control booking platform with time slot booking, order tracking, promo codes, reviews and an admin dashboard for orders, services and revenue.',
+      year: '2025',
+      links: [
+        { label: 'Code', url: 'https://github.com/ashuswami185/pestnfix_prototype' }
+      ]
     },
     {
       id: 4,
-      title: 'Social Media App',
-      tech: 'React Native • Firebase • Redux',
-      description: 'Cross-platform mobile application with real-time messaging features.',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop&q=80',
-      year: '2023'
+      title: 'Authentication App',
+      tech: 'React • Express • PostgreSQL • JWT',
+      description: 'Signup and login flow with bcrypt password hashing, JWT sessions and a protected dashboard route.',
+      year: '2026',
+      links: [
+        { label: 'Code', url: 'https://github.com/ashuswami185/auth-dbjs' }
+      ]
+    },
+    {
+      id: 5,
+      title: 'Rajasthan Crime Analysis',
+      tech: 'R • Shiny • Data Visualization',
+      description: 'Interactive dashboard that visualizes crime data across Rajasthan through charts and graphs.',
+      year: '2024',
+      links: [
+        { label: 'Code', url: 'https://github.com/ashuswami185/Crime-Analyisation' }
+      ]
     }
   ]
 
@@ -48,7 +66,7 @@ function Work() {
           </span>
         </h1>
         <p className="text-[11px] sm:text-[12px] md:text-[13px] font-medium tracking-[1.5px] md:tracking-[2px] text-[#666] mt-4 md:mt-6 uppercase">
-          A collection of recent projects
+          Full stack apps, containerized deployments and data dashboards
         </p>
       </div>
 
@@ -57,9 +75,7 @@ function Work() {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className="group relative border-t border-[#d0d0d0] py-6 sm:py-8 md:py-10 cursor-pointer transition-all duration-300 hover:bg-white/40"
-            onMouseEnter={() => setHoveredProject(project.id)}
-            onMouseLeave={() => setHoveredProject(null)}
+            className="group relative border-t border-[#d0d0d0] py-6 sm:py-8 md:py-10 transition-all duration-300 hover:bg-white/40"
           >
             <div className="grid grid-cols-12 gap-4 sm:gap-6 md:gap-8 items-start md:items-center">
               {/* Number */}
@@ -82,24 +98,27 @@ function Work() {
                 </p>
               </div>
 
-              {/* Year & Arrow */}
+              {/* Year & Links */}
               <div className="col-span-12 sm:col-span-11 sm:col-start-2 lg:col-span-4 lg:ml-auto lg:col-start-9">
                 <div className="flex items-center justify-between lg:justify-end gap-6 md:gap-8">
                   <span className="text-[12px] sm:text-[13px] font-medium tracking-[1px] text-[#999]">
                     {project.year}
                   </span>
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 border border-[#999] flex items-center justify-center group-hover:border-[#333] group-hover:bg-[#333] transition-all duration-300">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      className="text-[#999] group-hover:text-white transition-colors duration-300 sm:w-[14px] sm:h-[14px]"
-                    >
-                      <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                    </svg>
+                  <div className="flex gap-2 sm:gap-3">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="h-9 sm:h-10 px-3 sm:px-4 border border-[#999] flex items-center gap-2 text-[10px] sm:text-[11px] font-medium tracking-[1.5px] uppercase text-[#666] hover:border-[#333] hover:bg-[#333] hover:text-white transition-all duration-300"
+                      >
+                        {link.label}
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                        </svg>
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -108,9 +127,19 @@ function Work() {
         ))}
       </div>
 
-
       {/* Bottom Border */}
       <div className="max-w-[1400px] mx-auto border-t border-[#d0d0d0] mt-1"></div>
+
+      <div className="max-w-[1400px] mx-auto mt-10 md:mt-14">
+        <a
+          href="https://github.com/ashuswami185?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[11px] sm:text-[12px] md:text-[13px] font-medium tracking-[2px] text-[#666] uppercase hover:text-[#333] transition-colors duration-300"
+        >
+          More on GitHub →
+        </a>
+      </div>
     </section>
   )
 }

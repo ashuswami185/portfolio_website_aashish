@@ -1,4 +1,5 @@
 import React from 'react'
+import SocialLinks from '../components/SocialLinks'
 
 function Home() {
   return (
@@ -24,40 +25,11 @@ function Home() {
 
       {/* Bottom Left Copyright */}
       <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-[10px] md:text-[11px] font-medium text-[#aaa] tracking-[1px] z-10">
-        ©2025
-      </div>
-
-      {/* Hero Image */}
-      <div className="absolute right-[-50px] xl:right-[-40px] lg:right-[-30px] bottom-[-40px] w-[500px] xl:w-[450px] lg:w-[400px] h-[100vh] xl:h-[100vh] lg:h-[100vh] z-[3] overflow-visible hidden">
-        <img
-          src="/herosecton_imng.png"
-          alt="Hero"
-          className="w-full h-full object-cover object-bottom brightness-[0.98] contrast-[1.02]"
-        />
+        ©{new Date().getFullYear()}
       </div>
 
       {/* Right Sidebar Social Icons */}
-      <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 flex flex-col gap-4 md:gap-5 z-10 hidden sm:flex">
-        <a href="https://www.linkedin.com/in/aashish-swami-b35b04236/" target="_blank" rel="noopener noreferrer" className="w-6 h-6 md:w-7 md:h-7 text-[#666] transition-colors duration-300 flex items-center justify-center border-[1.5px] border-[#666] p-1 hover:text-[#333] hover:border-[#333]" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </a>
-        <a href="https://www.instagram.com/literally_aashish/" target="_blank" rel="noopener noreferrer" className="w-6 h-6 md:w-7 md:h-7 text-[#666] transition-colors duration-300 flex items-center justify-center border-[1.5px] border-[#666] p-1 hover:text-[#333] hover:border-[#333]" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </a>
-        <a href="https://x.com/Aashish0931" target="_blank" rel="noopener noreferrer" className="w-6 h-6 md:w-7 md:h-7 text-[#666] transition-colors duration-300 flex items-center justify-center border-[1.5px] border-[#666] p-1 hover:text-[#333] hover:border-[#333]" aria-label="Twitter/X">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
-            <path d="M18 6L6 18M6 6l12 12"></path>
-          </svg>
-        </a>
-      </div>
+      <SocialLinks className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 flex-col gap-4 md:gap-5 z-10 hidden sm:flex" />
     </section>
   )
 }
